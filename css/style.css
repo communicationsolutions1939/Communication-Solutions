@@ -838,12 +838,6 @@ header {
     font-size: 14px;
 }
 
-.field-error {
-    border-color: #ef4444 !important;
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
-    background-color: rgba(239, 68, 68, 0.05) !important;
-}
-
 
 /* ========================================
    APPLICATION
@@ -997,179 +991,387 @@ header {
 }
 
 .audience-section {
-    padding: 100px 30px;
+    padding: 30px;
     background-color: var(--cream);
 }
 
 .audience-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-    max-width: 1100px;
+    gap: 25px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .audience-card {
+    min-height: 400px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    padding: 50px;
+    justify-content: space-between;
+    border-radius: 18px;
+}
+
+.employer-card {
+    background-color: var(--navy);
+    transition: box-shadow 0.2s ease;
+}
+
+.employer-card:hover {
+    box-shadow: 0 0 0 2px var(--white);
+}
+
+.candidate-card {
     background-color: var(--white);
-    border-radius: 20px;
     border: 1px solid var(--border);
 }
-
-.audience-card div {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.audience-card h2 {
+    max-width: 450px;
+    margin: 15px 0;
+    font-size: 38px;
+    line-height: 1.15;
 }
 
-.audience-card h2 {
+.employer-card h2 {
+    color: var(--white);
+}
+
+.candidate-card h2 {
     color: var(--navy);
-    font-size: 38px;
-    line-height: 1.2;
 }
 
 .audience-card p:not(.eyebrow) {
-    color: var(--text-light);
-    font-size: 17px;
+    max-width: 500px;
     line-height: 1.7;
 }
 
-.audience-card .button {
-    align-self: flex-start;
+.employer-card p:not(.eyebrow) {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.candidate-card p:not(.eyebrow) {
+    color: var(--text-light);
 }
 
 .home-services {
-    padding: 100px 30px;
+    padding: 110px 30px;
     background-color: var(--white);
-}
-
-.home-services .section-content {
-    max-width: 1200px;
 }
 
 .home-services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 60px;
-}
-
-.home-service {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 0;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .home-service span {
+    display: block;
+    margin-bottom: 25px;
     color: var(--blue);
-    font-size: 28px;
+    font-size: 14px;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .home-service h3 {
+    margin-bottom: 12px;
     color: var(--navy);
-    font-size: 24px;
+    font-size: 25px;
 }
 
 .home-service p {
     color: var(--text-light);
-    font-size: 16px;
     line-height: 1.7;
 }
 
 .job-cta {
-    padding: 100px 30px;
+    padding: 110px 30px;
     text-align: center;
-    background-color: var(--light-blue);
+    background-color: var(--cream);
 }
 
-.job-cta .section-content h2 {
-    margin-bottom: 15px;
+.job-cta h2 {
+    margin: 12px 0 20px;
+    color: var(--navy);
+    font-size: 48px;
+    line-height: 1.15;
 }
 
-.job-cta .section-content p {
+.job-cta p:not(.eyebrow) {
     margin-bottom: 30px;
+    color: var(--text-light);
+    font-size: 18px;
+    line-height: 1.7;
 }
+
 
 /* ========================================
-   RESPONSIVE DESIGN
+   FOOTER
+======================================== */
+
+footer {
+    padding: 35px 20px;
+    background-color: var(--dark);
+    color: var(--white);
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* ========================================
+   MOBILE
 ======================================== */
 
 @media (max-width: 768px) {
-    .services-grid,
-    .industries-grid,
-    .process-grid,
-    .values-grid,
-    .candidate-benefits,
-    .home-services-grid {
-        grid-template-columns: 1fr;
-    }
 
-    .job-search {
-        grid-template-columns: 1fr;
-    }
+    /* Navigation */
 
-    .contact-container,
-    .job-details-container,
-    .audience-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .job-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .job-card .button {
-        width: 100%;
-    }
-
-    .page-hero {
-        min-height: 350px;
-    }
-
-    .home-hero {
-        min-height: 500px;
-        padding: 60px 30px;
-    }
-
-    .home-hero h1 {
-        font-size: clamp(32px, 6vw, 48px);
-    }
-
-    .nav-links {
-        display: none;
+    .navbar {
+        padding: 18px 20px;
     }
 
     .mobile-menu-button {
         display: block;
     }
 
-    .nav-links.mobile-open {
-        display: flex;
-        flex-direction: column;
+    .nav-links {
+        display: none;
         position: absolute;
-        top: 60px;
+        top: 100%;
         left: 0;
         right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 20px;
         background-color: var(--white);
-        border-bottom: 1px solid var(--border);
-        padding: 20px 30px;
-        gap: 15px;
-        z-index: 999;
+        border-top: 1px solid var(--border);
+        box-shadow: 0 15px 30px rgba(23, 50, 77, 0.08);
     }
 
-    .eyebrow {
-        font-size: 12px;
+    .nav-links.mobile-open {
+        display: flex;
     }
+
+    .nav-links a {
+        width: 100%;
+        padding: 14px 5px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+
+    /* Page Hero */
+
+    .page-hero {
+        min-height: 400px;
+        padding: 70px 20px;
+    }
+
+    .page-content h1 {
+        font-size: 42px;
+    }
+
+    .page-content p:not(.eyebrow) {
+        font-size: 17px;
+    }
+
+
+    /* General Sections */
+
+    .content-section {
+        padding: 75px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+
+    /* Services */
+
+    .services-section,
+    .industries-section,
+    .process-section,
+    .values-section {
+        padding: 75px 20px;
+    }
+
+    .services-grid,
+    .industries-grid,
+    .process-grid,
+    .values-grid,
+    .candidate-benefits {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Job Search */
+
+    .jobs-section {
+        padding: 70px 20px;
+    }
+
+    .job-search {
+        grid-template-columns: 1fr;
+    }
+
+    .jobs-header h2 {
+        font-size: 34px;
+    }
+
+    .job-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
+
+    .job-card .button {
+        width: 100%;
+    }
+
+
+    /* Job Details */
+
+    .job-details-section {
+        padding: 70px 20px;
+    }
+
+    .job-details-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+
+    /* Contact */
+
+    .contact-section {
+        padding: 70px 20px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contact-form-wrapper {
+        padding: 25px;
+    }
+
+
+    /* Application */
+
+    .application-section {
+        padding: 60px 20px;
+    }
+
+    .application-container {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section h2 {
+        font-size: 25px;
+    }
+
+
+    /* Homepage */
+
+    .home-hero {
+        min-height: 550px;
+        padding: 60px 20px;
+    }
+
+    .home-hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+    }
+
+    .home-intro,
+    .home-services,
+    .job-cta {
+        padding: 75px 20px;
+    }
+
+    .home-intro h2,
+    .job-cta h2 {
+        font-size: 36px;
+    }
+
+    .audience-section {
+        padding: 20px;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .audience-card {
+        min-height: 350px;
+        padding: 35px;
+    }
+
+    .audience-card h2 {
+        font-size: 32px;
+    }
+
+    .home-services-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+}/* ========================================
+   APPLICATION FIELD VALIDATION
+======================================== */
+
+.form-group input.field-error {
+    border-color: #D64545;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(214, 69, 69, 0.15);
+}
+
+
+/* ========================================
+   CONTACT FORM FIELD VALIDATION
+======================================== */
+
+#contact-form input.field-error,
+#contact-form textarea.field-error {
+    border-color: #D64545;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(214, 69, 69, 0.15);
+}
+#employer-inquiry-form input.field-error,
+#employer-inquiry-form textarea.field-error {
+    border-color: #D64545;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(214, 69, 69, 0.15);
 }

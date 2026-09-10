@@ -110,9 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-});
-
-document.addEventListener("DOMContentLoaded", function () {
+});document.addEventListener("DOMContentLoaded", function () {
 
     const applicationForm = document.getElementById("application-form");
     const cityField = document.getElementById("city");
@@ -147,9 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-});
-
-document.addEventListener("DOMContentLoaded", function () {
+});document.addEventListener("DOMContentLoaded", function () {
 
     const cityField = document.getElementById("city");
     const submitButton = document.querySelector(
