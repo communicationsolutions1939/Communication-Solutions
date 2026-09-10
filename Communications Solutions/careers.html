@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Careers | Communication Solutions</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                <span class="logo-main">Communication</span>
+                <span class="logo-sub">Solutions</span>
+            </a>
+
+            <div class="nav-links" id="nav-links">
+                <a href="employers.html">Employers</a>
+                <a href="job-seekers.html">Job Seekers</a>
+                <a href="careers.html">Careers</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <button
+                class="mobile-menu-button"
+                id="mobile-menu-button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                type="button"
+            >
+                ☰
+            </button>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- Careers Header -->
+
+        <section class="page-hero">
+
+            <div class="page-content">
+
+                <p class="eyebrow">
+                    Careers
+                </p>
+
+                <h1>
+                    Find your next opportunity.
+                </h1>
+
+                <p>
+                    Explore current openings and find a position that
+                    matches your skills, experience, and goals.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Job Listings -->
+
+        <section class="jobs-section">
+
+            <div class="jobs-container">
+
+                <div class="jobs-header">
+
+                    <p class="eyebrow">
+                        Current Opportunities
+                    </p>
+
+                    <h2>
+                        Open Positions
+                    </h2>
+
+                    <p>
+                        Browse our current opportunities below.
+                    </p>
+
+                </div>
+
+
+                <!-- Job Search -->
+
+                <div class="job-search">
+
+                    <input
+                        type="text"
+                        id="job-search"
+                        placeholder="Search jobs..."
+                        aria-label="Search jobs"
+                    >
+
+                    <select
+                        id="job-location"
+                        aria-label="Filter by location"
+                    >
+
+                        <option value="all">
+                            All Locations
+                        </option>
+
+                        <option value="denton">
+                            Denton, TX
+                        </option>
+
+                        <option value="dallas">
+                            Dallas, TX
+                        </option>
+
+                        <option value="remote">
+                            Remote
+                        </option>
+
+                    </select>
+
+
+                    <select
+                        id="job-department"
+                        aria-label="Filter by department"
+                    >
+
+                        <option value="all">
+                            All Departments
+                        </option>
+
+                        <option value="transportation">
+                            Transportation
+                        </option>
+
+                        <option value="warehouse">
+                            Warehouse & Logistics
+                        </option>
+
+                        <option value="sales">
+                            Sales
+                        </option>
+
+                        <option value="recruiting">
+                            Recruiting
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Job Listings -->
+
+                <div id="job-listings">
+
+
+                    <!-- CDL Driver -->
+
+                    <article
+                        class="job-card"
+                        data-department="transportation"
+                    >
+
+                        <div class="job-info">
+
+                            <h3>
+                                CDL Class A Driver
+                            </h3>
+
+                            <p class="job-location">
+                                Denton, TX
+                            </p>
+
+                            <p class="job-type">
+                                Full Time
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="job.html?job=driver"
+                            class="button secondary"
+                        >
+                            View Position
+                        </a>
+
+                    </article>
+
+
+                    <!-- Warehouse -->
+
+                    <article
+                        class="job-card"
+                        data-department="warehouse"
+                    >
+
+                        <div class="job-info">
+
+                            <h3>
+                                Warehouse Associate
+                            </h3>
+
+                            <p class="job-location">
+                                Dallas, TX
+                            </p>
+
+                            <p class="job-type">
+                                Full Time
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="job.html?job=warehouse"
+                            class="button secondary"
+                        >
+                            View Position
+                        </a>
+
+                    </article>
+
+
+                    <!-- Recruiter -->
+
+                    <article
+                        class="job-card"
+                        data-department="recruiting"
+                    >
+
+                        <div class="job-info">
+
+                            <h3>
+                                Recruiter
+                            </h3>
+
+                            <p class="job-location">
+                                Remote
+                            </p>
+
+                            <p class="job-type">
+                                Full Time
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="job.html?job=recruiter"
+                            class="button secondary"
+                        >
+                            View Position
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Communication Solutions.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/navigation.js"></script>
+    <script src="js/careers.js"></script>
+
+</body>
+
+</html>
+```
