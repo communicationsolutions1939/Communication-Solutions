@@ -838,6 +838,12 @@ header {
     font-size: 14px;
 }
 
+.field-error {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+    background-color: rgba(239, 68, 68, 0.05) !important;
+}
+
 
 /* ========================================
    APPLICATION
@@ -991,10 +997,179 @@ header {
 }
 
 .audience-section {
-    padding: 30px;
+    padding: 100px 30px;
     background-color: var(--cream);
 }
 
 .audience-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.audience-card {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 50px;
+    background-color: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+}
+
+.audience-card div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.audience-card h2 {
+    color: var(--navy);
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.audience-card p:not(.eyebrow) {
+    color: var(--text-light);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.audience-card .button {
+    align-self: flex-start;
+}
+
+.home-services {
+    padding: 100px 30px;
+    background-color: var(--white);
+}
+
+.home-services .section-content {
+    max-width: 1200px;
+}
+
+.home-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.home-service {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+}
+
+.home-service span {
+    color: var(--blue);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.home-service h3 {
+    color: var(--navy);
+    font-size: 24px;
+}
+
+.home-service p {
+    color: var(--text-light);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.job-cta {
+    padding: 100px 30px;
+    text-align: center;
+    background-color: var(--light-blue);
+}
+
+.job-cta .section-content h2 {
+    margin-bottom: 15px;
+}
+
+.job-cta .section-content p {
+    margin-bottom: 30px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+    .services-grid,
+    .industries-grid,
+    .process-grid,
+    .values-grid,
+    .candidate-benefits,
+    .home-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .job-search {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container,
+    .job-details-container,
+    .audience-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .job-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .job-card .button {
+        width: 100%;
+    }
+
+    .page-hero {
+        min-height: 350px;
+    }
+
+    .home-hero {
+        min-height: 500px;
+        padding: 60px 30px;
+    }
+
+    .home-hero h1 {
+        font-size: clamp(32px, 6vw, 48px);
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        border-bottom: 1px solid var(--border);
+        padding: 20px 30px;
+        gap: 15px;
+        z-index: 999;
+    }
+
+    .eyebrow {
+        font-size: 12px;
+    }
+}
