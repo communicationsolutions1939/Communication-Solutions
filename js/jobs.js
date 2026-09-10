@@ -1,0 +1,114 @@
+// ========================================
+// JOB DATABASE
+// ========================================
+
+const jobs = {
+
+    driver: {
+
+        title: "CDL Class A Driver",
+
+        location: "Denton, TX",
+
+        type: "Full Time",
+
+        department: "transportation",
+
+        description:
+            "Placeholder description for the CDL Class A Driver position.",
+
+        responsibilities: [
+
+            "Placeholder responsibility",
+
+            "Placeholder responsibility",
+
+            "Placeholder responsibility"
+
+        ],
+
+        qualifications: [
+
+            "Valid CDL Class A license",
+
+            "Placeholder qualification",
+
+            "Placeholder qualification"
+
+        ]
+
+    },
+
+
+    warehouse: {
+
+        title: "Warehouse Associate",
+
+        location: "Dallas, TX",
+
+        type: "Full Time",
+
+        department: "warehouse",
+
+        description:
+            "Placeholder description for the Warehouse Associate position.",
+
+        responsibilities: [
+
+            "Placeholder responsibility",
+
+            "Placeholder responsibility",
+
+            "Placeholder responsibility"
+
+        ],
+
+        qualifications: [
+
+            "Placeholder qualification",
+
+            "Placeholder qualification",
+
+            "Placeholder qualification"
+
+        ]
+
+    },
+
+
+    recruiter: {
+
+        title: "Recruiter",
+
+        location: "Remote",
+
+        type: "Full Time",
+
+        department: "recruiting",
+
+        description:
+            "Placeholder description for the Recruiter position.",
+
+        responsibilities: [
+
+            "Placeholder responsibility",
+
+            "Placeholder responsibility",
+
+            "Placeholder responsibility"
+
+        ],
+
+        qualifications: [
+
+            "Placeholder qualification",
+
+            "Placeholder qualification",
+
+            "Placeholder qualification"
+
+        ]
+
+    }
+
+};
