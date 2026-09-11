@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const positionDropdown = document.getElementById("position");
     const locationDropdown = document.getElementById("location");
     const applicationForm = document.getElementById("application-form");
+    const applicationMessage =
+        document.getElementById("application-message");
 
     if (
         !positionDropdown ||
@@ -15,6 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
         return;
     }
+
+
+    /*
+     * Populate Position Dropdown
+     */
 
     Object.keys(jobs).forEach(function (jobID) {
 
@@ -30,6 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+
+    /*
+     * Populate Location Dropdown
+     */
+
     const locations = new Set();
 
     Object.keys(jobs).forEach(function (jobID) {
@@ -37,10 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const job = jobs[jobID];
 
         if (job.location) {
+
             locations.add(job.location);
+
         }
 
     });
+
 
     locations.forEach(function (location) {
 
@@ -53,6 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
         locationDropdown.appendChild(option);
 
     });
+
+
+    /*
+     * Autofill Position and Location
+     * From Selected Job
+     */
 
     if (selectedPosition && jobs[selectedPosition]) {
 
@@ -68,11 +89,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+
     if (!applicationForm) {
         return;
     }
 
-    const personalFields = [
+
+    /*
+     * Required Fields
+     */
+
+    const requiredFields = [
+        positionDropdown,
+        locationDropdown,
         document.getElementById("first-name"),
         document.getElementById("last-name"),
         document.getElementById("email"),
@@ -80,23 +109,17 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("city")
     ];
 
-    applicationForm.addEventListener("invalid", function (event) {
 
-        const field = event.target;
+    /*
+     * Remove Error When Field Is Corrected
+     */
 
-        if (personalFields.includes(field)) {
-
-            field.classList.add("field-error");
-
-        }
-
-    }, true);
-
-    personalFields.forEach(function (field) {
+    requiredFields.forEach(function (field) {
 
         if (!field) {
             return;
         }
+
 
         field.addEventListener("input", function () {
 
@@ -108,76 +131,129 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
+
+        field.addEventListener("change", function () {
+
+            if (field.value.trim()) {
+
+                field.classList.remove("field-error");
+
+            }
+
+        });
+
     });
 
-});document.addEventListener("DOMContentLoaded", function () {
 
-    const applicationForm = document.getElementById("application-form");
-    const cityField = document.getElementById("city");
+    /*
+     * Submit Application
+     */
 
-    if (!applicationForm || !cityField) {
-        return;
-    }
-
-    applicationForm.addEventListener("submit", function (event) {
-
-        if (!cityField.value.trim()) {
-
-            cityField.classList.add("field-error");
+    applicationForm.addEventListener(
+        "submit",
+        async function (event) {
 
             event.preventDefault();
 
-        } else {
 
-            cityField.classList.remove("field-error");
+            let formIsValid = true;
+
+
+            requiredFields.forEach(function (field) {
+
+                if (!field) {
+                    return;
+                }
+
+
+                if (!field.value.trim()) {
+
+                    field.classList.add("field-error");
+
+                    formIsValid = false;
+
+                } else {
+
+                    field.classList.remove("field-error");
+
+                }
+
+            });
+
+
+            if (!formIsValid) {
+                return;
+            }
+
+
+            const submitButton = applicationForm.querySelector(
+                'button[type="submit"]'
+            );
+
+
+            if (submitButton) {
+
+                submitButton.disabled = true;
+                submitButton.textContent = "Sending...";
+
+            }
+
+
+            if (applicationMessage) {
+
+                applicationMessage.textContent = "";
+
+            }
+
+
+            try {
+
+                const response = await fetch(
+                    applicationForm.action,
+                    {
+                        method: "POST",
+                        body: new FormData(applicationForm),
+                        headers: {
+                            "Accept": "application/json"
+                        }
+                    }
+                );
+
+
+                if (response.ok) {
+
+                    window.location.href = "thank-you.html";
+
+                } else {
+
+                    throw new Error(
+                        "Application submission failed."
+                    );
+
+                }
+
+
+            } catch (error) {
+
+                if (applicationMessage) {
+
+                    applicationMessage.textContent =
+                        "Something went wrong. Please try again.";
+
+                }
+
+
+                if (submitButton) {
+
+                    submitButton.disabled = false;
+                    submitButton.textContent =
+                        "Submit Application";
+
+                }
+
+            }
 
         }
-
-    });
-
-    cityField.addEventListener("input", function () {
-
-        if (cityField.value.trim()) {
-
-            cityField.classList.remove("field-error");
-
-        }
-
-    });
-
-});document.addEventListener("DOMContentLoaded", function () {
-
-    const cityField = document.getElementById("city");
-    const submitButton = document.querySelector(
-        '#application-form button[type="submit"]'
     );
-
-    if (!cityField || !submitButton) {
-        return;
-    }
-
-    submitButton.addEventListener("click", function () {
-
-        if (!cityField.value.trim()) {
-
-            cityField.classList.add("field-error");
-
-        } else {
-
-            cityField.classList.remove("field-error");
-
-        }
-
-    });
-
-    cityField.addEventListener("input", function () {
-
-        if (cityField.value.trim()) {
-
-            cityField.classList.remove("field-error");
-
-        }
-
-    });
 
 });
