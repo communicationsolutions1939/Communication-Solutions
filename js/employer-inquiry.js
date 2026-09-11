@@ -19,7 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
 
-    employerForm.addEventListener("submit", function (event) {
+    employerForm.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
 
         let formIsValid = true;
 
@@ -47,8 +50,68 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         if (!formIsValid) {
+            return;
+        }
 
-            event.preventDefault();
+
+        const submitButton = employerForm.querySelector(
+            'button[type="submit"]'
+        );
+
+
+        if (submitButton) {
+
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+
+        }
+
+
+        try {
+
+            const response = await fetch(
+                employerForm.action,
+                {
+                    method: "POST",
+                    body: new FormData(employerForm),
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                }
+            );
+
+
+            if (response.ok) {
+
+                window.location.href = "thank-you.html";
+
+            } else {
+
+                throw new Error("Form submission failed.");
+
+            }
+
+
+        } catch (error) {
+
+            const formMessage =
+                document.getElementById("form-message");
+
+
+            if (formMessage) {
+
+                formMessage.textContent =
+                    "Something went wrong. Please try again.";
+
+            }
+
+
+            if (submitButton) {
+
+                submitButton.disabled = false;
+                submitButton.textContent = "Send Message";
+
+            }
 
         }
 
