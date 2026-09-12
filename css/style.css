@@ -256,61 +256,101 @@ header {
 ======================================== */
 
 .content-section {
+
     padding: 100px 30px;
+
     background-color: var(--white);
+
 }
 
 .content-section.alternate {
+
     background-color: #F8FAFC;
+
 }
 
 .section-content {
+
     max-width: 800px;
+
     margin: 0 auto;
+
     text-align: center;
+
 }
 
 .section-content-wide {
+
     width: 100%;
+
     max-width: 1100px;
+
     margin: 0 auto;
+
 }
 
 .section-content h2 {
+
     margin-bottom: 25px;
+
     color: var(--navy);
+
     font-size: clamp(32px, 4vw, 48px);
+
     line-height: 1.15;
+
 }
 
 .section-content p:not(.eyebrow) {
+
     max-width: 700px;
+
     margin: 0 auto 25px;
+
     color: var(--text-light);
+
     font-size: 18px;
+
     line-height: 1.8;
+
 }
 
 .section-heading {
+
     max-width: 750px;
+
     margin: 0 auto 50px;
+
     text-align: center;
+
 }
 
 .section-heading h2 {
+
     margin: 8px 0 15px;
+
     color: var(--navy);
+
     font-size: clamp(36px, 4vw, 42px);
+
     line-height: 1.15;
+
     letter-spacing: -0.5px;
+
 }
 
 .section-heading > p:not(.eyebrow) {
+
     max-width: 680px;
+
     margin: 0 auto;
+
     color: var(--text-light);
+
     font-size: 17px;
+
     line-height: 1.75;
+
 }
 
 
