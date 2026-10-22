@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Resume | Communication Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="page-content">
+            <a href="index.html" class="logo">
+                <span>Communication</span>
+                <small>Solutions</small>
+            </a>
+
+            <button class="mobile-menu-button" id="mobile-menu-button" aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <nav id="nav-links">
+                <a href="employers.html">Employers</a>
+                <a href="job-seekers.html">Job Seekers</a>
+                <a href="careers.html">Careers</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-content">
+                <p class="eyebrow">Job Seeker Resume Submission</p>
+                <h1>Tell Us About Yourself</h1>
+                <p>
+                    Share your resume and a little about what you're looking for.
+                    Our team can use this information to consider you for relevant
+                    opportunities.
+                </p>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="page-content">
+                <h2>Candidate Information</h2>
+                <p>
+                    Complete the form below to introduce yourself to
+                    Communication Solutions.
+                </p>
+
+                <!-- Candidate form will be connected to its submission service next. -->
+<form
+    id="resume-submission-form"
+    action="https://formspree.io/f/xljgqzzn"
+    method="POST"
+    novalidate
+>
+    <input type="hidden" name="_next" value="https://YOUR-WEBSITE-ADDRESS/thank-you.html">
+
+                    <div class="form-group">
+                        <label for="first-name">First Name *</label>
+                        <input type="text" id="first-name" name="first_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Last Name *</label>
+                        <input type="text" id="last-name" name="last_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Current City and State *</label>
+                        <input type="text" id="location" name="location" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="target-role">What type of position are you seeking? *</label>
+                        <input type="text" id="target-role" name="target_role" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="work-arrangement">Preferred Work Arrangement</label>
+                        <select id="work-arrangement" name="work_arrangement" required>
+                            <option value="">Select an option</option>
+                            <option value="On-site">On-site</option>
+                            <option value="Hybrid">Hybrid</option>
+                            <option value="Remote">Remote</option>
+                            <option value="Open to any">Open to any</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pay">Desired Salary or Hourly Rate</label>
+                        <input type="text" id="pay" name="desired_pay" required
+       placeholder="Example: $60,000/year or $25/hour">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Tell Us About Your Experience and Skills *</label>
+                        <textarea id="experience" name="experience" rows="5"
+                                  placeholder="Include relevant experience, skills, certifications, or industries."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="availability">When Could You Start?</label>
+                        <select id="availability" name="availability" required>
+                            <option value="">Select an option</option>
+                            <option value="Immediately">Immediately</option>
+                            <option value="Within 2 weeks">Within 2 weeks</option>
+                            <option value="Within a month">Within a month</option>
+                            <option value="More than a month">More than a month</option>
+                            <option value="Just exploring">Just exploring opportunities</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn Profile URL</label>
+                        <input type="url" id="linkedin" name="linkedin"
+                               placeholder="https://www.linkedin.com/in/your-profile">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional-info">Anything Else You'd Like Us to Know?</label>
+                        <textarea id="additional-info" name="additional_info" rows="4"
+                                  placeholder="Optional additional information"></textarea>
+                    </div>
+
+                    <button type="submit" class="button primary">
+                        Submit Resume
+                    </button>
+
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="page-content">
+            <p>&copy; 2026 Communication Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/resume-submission.js"></script>
+</body>
+</html>
