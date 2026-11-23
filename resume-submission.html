@@ -9,26 +9,34 @@
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="page-content">
-            <a href="index.html" class="logo">
-                <span>Communication</span>
-                <small>Solutions</small>
-            </a>
+<header>
+    <nav class="navbar">
 
-            <button class="mobile-menu-button" id="mobile-menu-button" aria-label="Toggle navigation">
-                ☰
-            </button>
+        <a href="index.html" class="logo">
+            <span class="logo-main">Communication</span>
+            <span class="logo-sub">Solutions</span>
+        </a>
 
-            <nav id="nav-links">
-                <a href="employers.html">Employers</a>
-                <a href="job-seekers.html">Job Seekers</a>
-                <a href="careers.html">Careers</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-            </nav>
+        <div class="nav-links" id="nav-links">
+            <a href="employers.html">Employers</a>
+            <a href="job-seekers.html">Job Seekers</a>
+            <a href="careers.html">Careers</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
         </div>
-    </header>
+
+        <button
+            class="mobile-menu-button"
+            id="mobile-menu-button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            type="button"
+        >
+            ☰
+        </button>
+
+    </nav>
+</header>
 
     <main>
         <section class="page-hero">
@@ -36,14 +44,16 @@
                 <p class="eyebrow">Job Seeker Resume Submission</p>
                 <h1>Tell Us About Yourself</h1>
                 <p>
-                    Share your resume and a little about what you're looking for.
-                    Our team can use this information to consider you for relevant
-                    opportunities.
+                    Share your resume and tell us a little about your experience and the 
+                    type of opportunities you're interested in. Our recruiting team will 
+                    use this information to better understand your background and 
+                    consider where your skills and qualifications may align with current 
+                    or upcoming positions.
                 </p>
             </div>
         </section>
 
-        <section class="page-section">
+<section class="page-section resume-submission-section">
             <div class="page-content">
                 <h2>Candidate Information</h2>
                 <p>
@@ -58,7 +68,7 @@
     method="POST"
     novalidate
 >
-    <input type="hidden" name="_next" value="https://YOUR-WEBSITE-ADDRESS/thank-you.html">
+    <input type="hidden" name="_next" value="file:///Users/natalie/Documents/Communications%20Solutions/thank-you.html">
 
                     <div class="form-group">
                         <label for="first-name">First Name *</label>
@@ -81,12 +91,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="location">Current City and State *</label>
+                        <label for="location">Current City/State *</label>
                         <input type="text" id="location" name="location" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="target-role">What type of position are you seeking? *</label>
+                        <label for="target-role">Current or Most Recent Title *</label>
                         <input type="text" id="target-role" name="target_role" required>
                     </div>
 
@@ -138,7 +148,7 @@
                     </div>
 
                     <button type="submit" class="button primary">
-                        Submit Resume
+                        Submit
                     </button>
 
                 </form>

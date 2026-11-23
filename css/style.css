@@ -213,7 +213,7 @@ header {
 
 .page-content {
     width: 100%;
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
 }
 
@@ -240,11 +240,15 @@ header {
 }
 
 .page-content p:not(.eyebrow) {
-    max-width: 680px;
+    max-width: 900px;
     margin: 0 auto;
     color: rgba(255, 255, 255, 0.8);
     font-size: 19px;
     line-height: 1.7;
+}
+
+.page-content p:not(.eyebrow) + p {
+    margin-top: 22px;
 }
 
 .page-hero-buttons {
@@ -1001,7 +1005,7 @@ header {
 }
 
 .application-submit {
-    padding-top: 5px;
+    padding-top: 1px;
     text-align: center;
 }
 
@@ -1702,4 +1706,89 @@ footer p {
 .text-link:focus-visible {
     outline: 2px solid var(--blue);
     outline-offset: 4px;
+}
+
+/* Candidate Experience Section */
+
+.candidate-experience-section {
+    background-color: var(--navy);
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.candidate-experience-section .section-heading .eyebrow {
+    color: #9CC7E6;
+}
+
+.candidate-experience-section .section-heading h2 {
+    color: var(--white);
+    white-space: nowrap;
+    width: max-content;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.candidate-experience-section .section-heading > p:not(.eyebrow) {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 800px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.candidate-experience-section .section-heading {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto 50px;
+}
+
+.candidate-experience-section .section-heading h2 {
+    max-width: none;
+    white-space: nowrap;
+}
+
+.candidate-experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 950px;
+    margin: 45px auto 0;
+}
+
+.candidate-experience-grid .service-card {
+    height: 100%;
+    text-align: left;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 35px;
+}
+
+.candidate-experience-grid .service-card p {
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .candidate-experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .candidate-experience-section .section-heading h2 {
+        width: 100%;
+        white-space: normal;
+    }
+}
+.candidate-approach-section .section-heading {
+    max-width: 1100px;
+}
+
+.candidate-approach-section .section-heading h2 {
+    white-space: nowrap;
+}
+
+/* Resume Submission Page */
+
+.resume-submission-section {
+    padding-bottom: 100px;
 }
