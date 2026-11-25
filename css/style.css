@@ -279,9 +279,7 @@ header {
 ======================================== */
 
 .content-section {
-
-    padding: 100px 30px;
-
+    padding: 65px 30px;
     background-color: var(--white);
 
 }
@@ -1058,11 +1056,11 @@ body:has(.employer-inquiry-section) .page-hero {
 
 .home-hero {
     position: relative;
-    min-height: 620px;
+    min-height: 480px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 90px 30px;
+    padding: 40px 30px;
     overflow: hidden;
     background-color: var(--navy);
 }
@@ -1148,7 +1146,7 @@ body:has(.employer-inquiry-section) .page-hero {
 }
 
 .audience-section {
-    padding: 32px 30px;
+    padding: 24px 30px;
     background-color: var(--cream);
 }
 
@@ -1161,8 +1159,8 @@ body:has(.employer-inquiry-section) .page-hero {
 }
 
 .audience-card {
-    min-height: 390px;
-    padding: 48px;
+    min-height: 320px;
+    padding: 35px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1222,7 +1220,7 @@ body:has(.employer-inquiry-section) .page-hero {
 }
 
 .home-services {
-    padding: 100px 30px;
+    padding: 45px 30px;
     background-color: var(--white);
 }
 
@@ -1257,7 +1255,7 @@ body:has(.employer-inquiry-section) .page-hero {
 }
 
 .job-cta {
-    padding: 100px 30px;
+    padding: 45px 30px;
     text-align: center;
     background-color: var(--cream);
 }
@@ -1442,7 +1440,7 @@ footer p {
     /* General Sections */
 
 .content-section {
-    padding: 70px 20px;
+    padding: 50px 20px;
 }
 
 .section-heading h2 {
@@ -1597,8 +1595,8 @@ footer p {
     }
 
 .audience-card {
-    min-height: 330px;
-    padding: 32px;
+    min-height: 290px;
+    padding: 28px;
 }
 
 .audience-card h2 {
@@ -2094,4 +2092,53 @@ footer p {
     margin: 25px auto;
     transform: scale(1.1);
     transform-origin: center;
+}
+
+.home-hero h1 {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Keep employer inquiry heading on one line on desktop */
+@media (min-width: 769px) {
+    body:has(.employer-inquiry-section) .page-hero h1 {
+        white-space: nowrap;
+    }
+}
+
+/* ========================================
+   CENTERED CONTACT FORM
+======================================== */
+
+.contact-section:has(#contact-form) .contact-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.contact-section:has(#contact-form) .contact-info {
+    display: none;
+}
+
+.contact-section:has(#contact-form) .contact-form-wrapper {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    flex: 0 1 750px;
+    padding: 25px;
+}
+
+/* Center Contact Form Submit Button */
+#contact-form button[type="submit"] {
+    display: block;
+    margin: 25px auto;
+}
+
+/* Careers Hero Spacing */
+body:has(#job-listings) .page-hero {
+    min-height: 300px;
+    padding: 55px 30px;
 }
