@@ -287,9 +287,19 @@ header {
 }
 
 .content-section.alternate {
+    background-color: var(--navy);
+}
 
-    background-color: #F8FAFC;
+.content-section.alternate .eyebrow {
+    color: #9CC7E6;
+}
 
+.content-section.alternate h2 {
+    color: var(--white);
+}
+
+.content-section.alternate p:not(.eyebrow) {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .section-content {
@@ -487,7 +497,19 @@ header {
 
 .process-section {
     padding: 100px 30px;
-    background-color: var(--white);
+    background-color: var(--navy);
+}
+
+.process-section .section-heading .eyebrow {
+    color: #9CC7E6;
+}
+
+.process-section .section-heading h2 {
+    color: var(--white);
+}
+
+.process-section .section-heading > p:not(.eyebrow) {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .process-grid {
@@ -505,7 +527,7 @@ header {
 .process-step > span {
     display: block;
     margin-bottom: 18px;
-    color: var(--blue);
+    color: #9CC7E6;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -513,14 +535,14 @@ header {
 
 .process-step h3 {
     margin-bottom: 14px;
-    color: var(--navy);
+    color: var(--white);
     font-size: 22px;
     line-height: 1.25;
     letter-spacing: -0.2px;
 }
 
 .process-step p {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.75;
 }
 
@@ -531,19 +553,19 @@ header {
 
 .values-section {
     padding: 100px 30px;
-    background-color: var(--navy);
+    background-color: var(--white);
 }
 
 .values-section .section-heading .eyebrow {
-    color: #9CC7E6;
+    color: var(--blue);
 }
 
 .values-section .section-heading h2 {
-    color: var(--white);
+    color: var(--navy);
 }
 
 .values-section .section-heading > p:not(.eyebrow) {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-light);
 }
 
 .values-grid {
@@ -830,16 +852,22 @@ header {
    CONTACT
 ======================================== */
 
-.contact-section {
-    padding: 95px 30px;
+.contact-section.employer-inquiry-section {
+    padding: 45px 30px;
     background-color: var(--white);
 }
 
+/* Reduce Employer Inquiry Hero Spacing */
+
+body:has(.employer-inquiry-section) .page-hero {
+    min-height: 420px;
+    padding: 65px 30px;
+}
+
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 70px;
-    align-items: start;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -890,6 +918,8 @@ header {
 ======================================== */
 
 .contact-form-wrapper {
+    width: 100%;
+    max-width: 465px;
     padding: 40px;
     background-color: var(--light-blue);
     border: 1px solid var(--border);
@@ -1787,8 +1817,281 @@ footer p {
     white-space: nowrap;
 }
 
-/* Resume Submission Page */
+/* Candidate Approach - Mobile Heading */
 
-.resume-submission-section {
-    padding-bottom: 100px;
+@media (max-width: 768px) {
+    .candidate-approach-section .section-heading h2 {
+        white-space: normal;
+        font-size: clamp(28px, 7vw, 36px);
+    }
+}  
+
+
+/* ========================================
+   EMPLOYER PROCESS TIMELINE
+======================================== */
+
+.employer-process-section {
+    padding: 110px 30px;
+    background-color: var(--navy);
+}
+
+.employer-process-section .section-heading {
+    margin-bottom: 75px;
+}
+
+.employer-process-section .section-heading .eyebrow {
+    color: #9CC7E6;
+}
+
+.employer-process-section .section-heading h2 {
+    color: var(--white);
+}
+
+.employer-process-section .section-heading > p:not(.eyebrow) {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* Timeline Structure */
+
+.employer-process-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.employer-process-timeline::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    left: 50%;
+    width: 2px;
+    background-color: rgba(156, 199, 230, 0.4);
+    transform: translateX(-50%);
+}
+
+.employer-process-step {
+    display: grid;
+    grid-template-columns: 1fr 90px 1fr;
+    align-items: center;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.employer-process-step:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Alternating Content */
+
+.employer-process-content {
+    grid-column: 1;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+}
+
+.employer-process-step:nth-child(even) .employer-process-content {
+    grid-column: 3;
+}
+
+.employer-process-empty {
+    grid-column: 3;
+}
+
+.employer-process-step:nth-child(even) .employer-process-empty {
+    grid-column: 1;
+}
+
+
+/* Timeline Number */
+
+.employer-process-marker {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: var(--blue);
+    border: 5px solid var(--navy);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+.employer-process-marker.final-marker {
+    background-color: #9CC7E6;
+    color: var(--navy);
+}
+
+
+/* Timeline Content */
+
+.employer-process-content .process-stage {
+    display: block;
+    margin-bottom: 12px;
+    color: #9CC7E6;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.employer-process-content h3 {
+    margin: 0 0 12px;
+    color: var(--white);
+    font-size: 23px;
+    line-height: 1.3;
+}
+
+.employer-process-content p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* Closing Call to Action */
+
+.employer-process-cta {
+    max-width: 650px;
+    margin: 85px auto 0;
+    padding-top: 45px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+}
+
+.employer-process-cta h3 {
+    margin-bottom: 12px;
+    color: var(--white);
+    font-size: 28px;
+}
+
+.employer-process-cta p {
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+}
+
+
+/* Mobile Timeline */
+
+@media (max-width: 768px) {
+
+    .employer-process-section {
+        padding: 75px 22px;
+    }
+
+    .employer-process-section .section-heading {
+        margin-bottom: 50px;
+    }
+
+    .employer-process-timeline::before {
+        left: 25px;
+        transform: none;
+    }
+
+    .employer-process-step {
+        grid-template-columns: 52px 1fr;
+        gap: 18px;
+        margin-bottom: 28px;
+        align-items: start;
+    }
+
+    .employer-process-content,
+    .employer-process-step:nth-child(even) .employer-process-content {
+        grid-column: 2;
+        grid-row: 1;
+        padding: 24px;
+    }
+
+    .employer-process-marker {
+        grid-column: 1;
+        grid-row: 1;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+    }
+
+    .employer-process-empty {
+        display: none;
+    }
+
+    .employer-process-content h3 {
+        font-size: 21px;
+    }
+
+    .employer-process-cta {
+        margin-top: 60px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .employer-process-content {
+        padding: 20px;
+    }
+
+    .employer-process-content p {
+        font-size: 14px;
+    }
+
+}
+
+/* ========================================
+   CENTERED EMPLOYER INQUIRY
+======================================== */
+
+.contact-container:has(#employer-inquiry-form) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.contact-container:has(#employer-inquiry-form) .contact-form-wrapper {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    flex: 0 1 750px;
+}
+
+/* Employer Inquiry Form Layout */
+
+.employer-inquiry-section .contact-info {
+    display: none;
+}
+
+.employer-inquiry-section .contact-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.employer-inquiry-section .contact-form-wrapper {
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
+    flex: 0 1 750px;
+}
+
+/* Center and Slightly Enlarge Employer Inquiry Button */
+
+.employer-inquiry-section #employer-inquiry-form button[type="submit"] {
+    display: block;
+    margin: 25px auto;
+    transform: scale(1.1);
+    transform-origin: center;
 }
