@@ -234,7 +234,7 @@ header {
 .page-content h1 {
     margin-bottom: 25px;
     color: var(--white);
-    font-size: clamp(40px, 5vw, 60px);
+    font-size: clamp(32px, 4vw, 46px);
     line-height: 1.1;
     letter-spacing: -1px;
 }
@@ -326,7 +326,7 @@ header {
 
     color: var(--navy);
 
-    font-size: clamp(32px, 4vw, 48px);
+    font-size: clamp(32px, 4vw, 46px);
 
     line-height: 1.15;
 
@@ -362,7 +362,7 @@ header {
 
     color: var(--navy);
 
-    font-size: clamp(36px, 4vw, 42px);
+    font-size: clamp(32px, 4vw, 46px);
 
     line-height: 1.15;
 
@@ -1104,7 +1104,7 @@ body:has(.employer-inquiry-section) .page-hero {
     max-width: 850px;
     margin: 0 auto 28px;
     color: var(--white);
-    font-size: clamp(32px, 4vw, 48px);
+    font-size: clamp(32px, 4vw, 46px);
     line-height: 1.05;
     letter-spacing: -1.5px;
 }
